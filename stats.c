@@ -261,8 +261,10 @@ float calculateStandardDeviation(float arr[], int size, float mean) {
   mean = calculateAverage(arr, size);
   for (int i = 0; i < size; i++) {
 
-    numerator = ((arr[i] - mean) * (arr[i] - mean)) +
-                (((arr[i] + 1) - mean) * ((arr[i] + 1) - mean));
+    // numerator = ((arr[i] - mean) * (arr[i] - mean)) +
+    //             (((arr[i] + 1) - mean) * ((arr[i] + 1) - mean));
+    numerator += ((arr[i] - mean) * (arr[i] - mean));
+    
   }
 
   float sd = sqrtf(numerator / (size - 1));
